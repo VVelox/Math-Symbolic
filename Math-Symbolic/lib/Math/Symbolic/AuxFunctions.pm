@@ -44,11 +44,11 @@ our $VERSION = '0.612';
 
 =head2 cosine
 
-Computes sin(x).
+Computes cos(x).
 
 =cut
 
-sub cosine { 
+sub cosine {
 	if ( ( $_[0] % ( PI / 2) ) == 0 ){
 		return 0;
 	}
@@ -63,7 +63,7 @@ Computes sin(x).
 
 =cut
 
-sub sine { 
+sub sine {
 	if ( ( $_[0] % PI ) == 0 ){
 		return 0;
 	}
@@ -78,7 +78,7 @@ Computes the tangent sin(x) / cos(x).
 
 sub tan {
 	if ( ( $_[0] % ( PI / 2 ) ) == 0 ){
-		return Math::BigRat->new('inf');;
+		return Math::BigRat->new('inf');
 	}
 	return sin( $_[0] ) / cos( $_[0] );
 }
