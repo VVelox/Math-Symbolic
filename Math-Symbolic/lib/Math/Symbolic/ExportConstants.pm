@@ -13,6 +13,7 @@ require Exporter;
 
 use constant EULER => 2.718281828459045235360287;
 use constant PI    => 3.141592653589793238462643;
+use constant ALT_PI => 3.14159265358979; # for testing when PI gets truncated
 
 use constant B_SUM            => 0;
 use constant B_DIFFERENCE     => 1;
@@ -48,6 +49,7 @@ our %EXPORT_TAGS = (
         qw(
           EULER
           PI
+          ALT_PI
 
           B_SUM
           B_DIFFERENCE

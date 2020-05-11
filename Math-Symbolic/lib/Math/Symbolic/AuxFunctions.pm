@@ -52,7 +52,10 @@ Computes cos(x).
 sub cosine {
 	if (
 		( $_[0] != 0 ) &&
-		( fmod($_[0], ( PI / 2 )) == 0 )
+		(
+			( fmod($_[0], ( ALT_PI / 2 )) == 0 ) ||
+			( fmod($_[0], ( PI / 2 )) == 0 )
+		)
 		){
 		return 0;
 	}
@@ -68,9 +71,13 @@ Computes sin(x).
 =cut
 
 sub sine {
-	if ( fmod($_[0], PI ) == 0 ){
+	if ( 
+		( fmod($_[0], ALT_PI ) == 0 ) ||
+		( fmod($_[0], PI ) == 0 )
+		){
 		return 0;
 	}
+
 	return sin( $_[0] );
 }
 
@@ -83,7 +90,10 @@ Computes the tangent sin(x) / cos(x).
 sub tan {
 	if (
 		( $_[0] != 0 ) &&
-		( fmod($_[0], ( PI / 2 )) == 0 )
+		(
+			( fmod($_[0], ( ALT_PI / 2 )) == 0 ) ||
+			( fmod($_[0], ( PI / 2 )) == 0 )
+		)
 		){
 		return Math::BigRat->new('inf');
 	}
