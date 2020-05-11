@@ -7,6 +7,7 @@ WriteMakefile
   'PREREQ_PM' => {
                    'Data::Dumper' => '0',
                    'Memoize' => '1.01',
+                   'Math::BigRat' => '0',
                    'Parse::RecDescent' => '0',
                    'Test::More' => 0
                  },
