@@ -33,6 +33,7 @@ use strict;
 use warnings;
 
 use Carp;
+use POSIX qw(fmod);
 use Math::BigRat;
 
 use Math::Symbolic::ExportConstants qw/:all/;
@@ -51,7 +52,7 @@ Computes cos(x).
 sub cosine {
 	if (
 		( $_[0] != 0 ) &&
-		( ( $_[0] % ( PI / 2) ) == 0 )
+		( fmod($_[0], ( PI / 2 )) == 0 )
 		){
 		return 0;
 	}
@@ -67,7 +68,7 @@ Computes sin(x).
 =cut
 
 sub sine {
-	if ( ( $_[0] % PI ) == 0 ){
+	if ( fmod($_[0], PI ) == 0 ){
 		return 0;
 	}
 	return sin( $_[0] );
@@ -80,7 +81,10 @@ Computes the tangent sin(x) / cos(x).
 =cut
 
 sub tan {
-	if ( ( $_[0] % ( PI / 2 ) ) == 0 ){
+	if (
+		( $_[0] != 0 ) &&
+		( fmod($_[0], ( PI / 2 )) == 0 )
+		){
 		return Math::BigRat->new('inf');
 	}
 	return sin( $_[0] ) / cos( $_[0] );
