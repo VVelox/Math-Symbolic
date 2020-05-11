@@ -49,7 +49,10 @@ Computes cos(x).
 =cut
 
 sub cosine {
-	if ( ( $_[0] % ( PI / 2) ) == 0 ){
+	if (
+		( $_[0] != 0 ) &&
+		( ( $_[0] % ( PI / 2) ) == 0 )
+		){
 		return 0;
 	}
 

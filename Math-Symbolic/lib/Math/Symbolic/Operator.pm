@@ -216,8 +216,8 @@ our @Op_Types = (
         derive        => 'trigonometric derivatives',
         infix_string  => undef,
         prefix_string => 'cos',
-        application   => 'cos($_[0])',
-#        application   => 'Math::Symbolic::AuxFunctions::cosine($_[0])',
+#        application   => 'cos($_[0])',
+        application   => 'Math::Symbolic::AuxFunctions::cosine($_[0])',
     },
 
     # U_TANGENT
