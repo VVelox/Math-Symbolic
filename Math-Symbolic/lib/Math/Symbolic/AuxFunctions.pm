@@ -33,6 +33,7 @@ use strict;
 use warnings;
 
 use Carp;
+use Math::BigRat;
 
 use Math::Symbolic::ExportConstants qw/:all/;
 use Memoize;
@@ -41,13 +42,47 @@ our $VERSION = '0.612';
 
 =head1 TRIGONOMETRIC FUNCTIONS
 
+=head2 cosine
+
+Computes sin(x).
+
+=cut
+
+sub cosine { 
+	if ( ( $_[0] % ( PI / 2) ) == 0 ){
+		return 0;
+	}
+
+	return cos( $_[0] );
+}
+
+
+=head2 sine
+
+Computes sin(x).
+
+=cut
+
+sub sine { 
+	if ( ( $_[0] % PI ) == 0 ){
+		return 0;
+	}
+	return sin( $_[0] );
+}
+
 =head2 tan
 
 Computes the tangent sin(x) / cos(x).
 
 =cut
 
-sub tan { sin( $_[0] ) / cos( $_[0] ) }
+sub tan {
+	if ( ( $_[0] % ( PI / 2 ) ) == 0 ){
+		return Math::BigRat->new('inf');;
+	}
+	return sin( $_[0] ) / cos( $_[0] );
+}
+
 
 =head2 cot
 

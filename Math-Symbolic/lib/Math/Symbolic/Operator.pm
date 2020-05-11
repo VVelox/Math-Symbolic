@@ -207,7 +207,7 @@ our @Op_Types = (
         derive        => 'trigonometric derivatives',
         infix_string  => undef,
         prefix_string => 'sin',
-        application   => 'sin($_[0])',
+        application   => 'Math::Symbolic::AuxFunctions::sine($_[0])',
     },
 
     # U_COSINE
@@ -217,6 +217,7 @@ our @Op_Types = (
         infix_string  => undef,
         prefix_string => 'cos',
         application   => 'cos($_[0])',
+#        application   => 'Math::Symbolic::AuxFunctions::cosine($_[0])',
     },
 
     # U_TANGENT
@@ -225,7 +226,8 @@ our @Op_Types = (
         derive        => 'trigonometric derivatives',
         infix_string  => undef,
         prefix_string => 'tan',
-        application   => 'sin($_[0])/cos($_[0])',
+#        application   => 'sin( $_[0] ) / cos( $_[0] )',
+        application   => 'Math::Symbolic::AuxFunctions::tan($_[0])',
     },
 
     # U_COTANGENT
