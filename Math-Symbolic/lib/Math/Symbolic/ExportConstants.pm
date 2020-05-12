@@ -11,9 +11,17 @@ use warnings;
 
 require Exporter;
 
+use Math::BigFloat;
+
 use constant EULER => 2.718281828459045235360287;
-use constant PI    => 3.141592653589793238462643;
+use constant PI    => Math::BigFloat->new('3.141592653589793238462643');
 use constant ALT_PI => 3.14159265358979; # for testing when PI gets truncated
+use constant ALT_PI2 => 3.1415926535897; # for testing when PI gets truncated
+use constant ALT_PI3 => 3.141592653589; # for testing when PI gets truncated
+use constant ALT_PI4 => 3.14159265358; # for testing when PI gets truncated
+use constant ALT_PI5 => 3.1415926535; # for testing when PI gets truncated
+use constant ALT_PI6 => 3.141592653; # for testing when PI gets truncated
+use constant ALT_PI7 => 3.14159265; # for testing when PI gets truncated
 
 use constant B_SUM            => 0;
 use constant B_DIFFERENCE     => 1;
@@ -50,6 +58,12 @@ our %EXPORT_TAGS = (
           EULER
           PI
           ALT_PI
+          ALT_PI2
+          ALT_PI3
+          ALT_PI4
+          ALT_PI5
+          ALT_PI6
+          ALT_PI7
 
           B_SUM
           B_DIFFERENCE

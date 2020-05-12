@@ -53,6 +53,12 @@ sub cosine {
 	if (
 		( $_[0] != 0 ) &&
 		(
+			( fmod($_[0], ( ALT_PI7 / 2 )) == 0 ) ||
+			( fmod($_[0], ( ALT_PI6 / 2 )) == 0 ) ||
+			( fmod($_[0], ( ALT_PI5 / 2 )) == 0 ) ||
+			( fmod($_[0], ( ALT_PI4 / 2 )) == 0 ) ||
+			( fmod($_[0], ( ALT_PI3 / 2 )) == 0 ) ||
+			( fmod($_[0], ( ALT_PI2 / 2 )) == 0 ) ||
 			( fmod($_[0], ( ALT_PI / 2 )) == 0 ) ||
 			( fmod($_[0], ( PI / 2 )) == 0 )
 		)
@@ -71,7 +77,13 @@ Computes sin(x).
 =cut
 
 sub sine {
-	if ( 
+	if (
+		( fmod($_[0], ALT_PI7 ) == 0 ) ||
+		( fmod($_[0], ALT_PI6 ) == 0 ) ||
+		( fmod($_[0], ALT_PI5 ) == 0 ) ||
+		( fmod($_[0], ALT_PI4 ) == 0 ) ||
+		( fmod($_[0], ALT_PI3 ) == 0 ) ||
+		( fmod($_[0], ALT_PI2 ) == 0 ) ||
 		( fmod($_[0], ALT_PI ) == 0 ) ||
 		( fmod($_[0], PI ) == 0 )
 		){
